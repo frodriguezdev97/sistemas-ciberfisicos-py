@@ -1,0 +1,68 @@
+============================
+ELEMENTOS DE DATOS CLAVE
+============================
+
+Los semáforos inteligentes generarán los siguientes datos:
+
+- INTERSECCIONES:
+  * Ubicación geográfica
+  * Número de carriles
+  * Cruces peatonales
+
+- SEMÁFOROS:
+  * Estado (verde, amarillo, rojo)
+  * Tiempo de cada fase
+
+- SENSORES IoT:
+  * Conteo de vehículos
+  * Bicicletas
+  * Peatones
+  * Transporte público
+
+- CÁMARAS CCTV:
+  * Detección de infracciones
+  * Detección de accidentes
+
+- EVENTOS ESPECIALES:
+  * Paso de vehículos de emergencia (ambulancias, bomberos, policía)
+  * Prioridad a peatones con discapacidad
+
+- ESTACIONAMIENTOS:
+  * Disponibilidad de espacios
+  * Uso de espacios en tiempo real
+
+- ALERTAS DE CONGESTIÓN:
+  * Niveles de tráfico (fluido, moderado, congestionado)
+  * Predicción de congestión
+
+====================
+RELACIONES ENTRE DATOS
+====================
+
+- Una INTERSECCIÓN puede tener varios SEMÁFOROS.
+- Un SEMÁFORO tiene varios ESTADOS registrados a lo largo del tiempo.
+- Una INTERSECCIÓN puede tener varios SENSORES y CÁMARAS.
+- Cada SENSOR genera datos asociados a una INTERSECCIÓN y a un momento del tiempo.
+- EVENTOS DE EMERGENCIA se vinculan a una INTERSECCIÓN y afectan a los SEMÁFOROS.
+- Un ESTACIONAMIENTO puede tener múltiples ESPACIOS, cada uno con estado (ocupado/libre).
+- Se registra la HISTORIA de uso de cada ESPACIO DE ESTACIONAMIENTO.
+- Se registra el NIVEL DE CONGESTIÓN en cada INTERSECCIÓN periódicamente.
+
+====================
+DICCIONARIO DE DATOS
+====================
+
+Objeto:         Descripción:
+---------------------------------------------------------------
+Intersección    | Punto de cruce con semáforos dentro del campus
+Semáforo        | Dispositivo con luces que regula el tráfico
+EstadoSemaforo  | Registro del estado del semáforo (rojo, amarillo, verde)
+Sensor          | Dispositivo que mide flujo de vehículos, peatones, etc.
+DatoSensor      | Información registrada por el sensor (cantidad, velocidad)
+Cámara          | Dispositivo CCTV en una intersección
+EventoCamara    | Detección de accidente o infracción por cámara
+EventoEmergencia| Registro del paso de vehículos de emergencia
+Estacionamiento | Zona designada para aparcamiento de vehículos
+EspacioEstac.   | Lugar individual dentro de un estacionamiento
+UsoEstac.       | Registro de uso del espacio de estacionamiento
+Congestión      | Nivel de tráfico registrado en una intersección
